@@ -38,6 +38,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Tutorial:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="python_binding.html">WeNet Python Binding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="papers.html">Papers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_librispeech.html">Tutorial on LibriSpeech</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial on AIShell</a><ul>
@@ -76,8 +77,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Tutorial on AIShell</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Tutorial on AIShell</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/tutorial_aishell.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -123,23 +124,24 @@
 <p>We provide a recipe <code class="docutils literal notranslate"><span class="pre">example/aishell/s0/run.sh</span></code> on aishell-1 data.</p>
 <p>The recipe is simple and we suggest you run each stage one by one manually and check the result to understand the whole process.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">example</span><span class="o">/</span><span class="n">aishell</span><span class="o">/</span><span class="n">s0</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="o">-</span><span class="mi">1</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">0</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">0</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">1</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">1</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">2</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">2</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">3</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">3</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">4</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">4</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">5</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">5</span>
-<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">6</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">6</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="o">-</span><span class="mi">1</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">0</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">0</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">1</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">1</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">2</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">2</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">3</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">3</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">4</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">4</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">5</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">5</span>
+<span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="mi">6</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">6</span>
 </pre></div>
 </div>
 <p>You could also just run the whole script</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="o">-</span><span class="mi">1</span> <span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">stage</span> <span class="mi">6</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">stage</span> <span class="o">-</span><span class="mi">1</span> <span class="o">--</span><span class="n">stop_stage</span> <span class="mi">6</span>
 </pre></div>
 </div>
 <div class="section" id="stage-1-download-data">
 <h3>Stage -1: Download data<a class="headerlink" href="#stage-1-download-data" title="Permalink to this headline"></a></h3>
-<p>This stage downloads the aishell-1 data to the local path <code class="docutils literal notranslate"><span class="pre">$data</span></code>. This may take several hours. If you have already downloaded the data, please change the <code class="docutils literal notranslate"><span class="pre">$data</span></code> variable in <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> and start from <code class="docutils literal notranslate"><span class="pre">--stage</span> <span class="pre">0</span></code>.</p>
+<p>This stage downloads the aishell-1 data to the local path <code class="docutils literal notranslate"><span class="pre">$data</span></code>. This may take several hours. If you have already downloaded the data, please change the <code class="docutils literal notranslate"><span class="pre">$data</span></code> variable in <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> and start from <code class="docutils literal notranslate"><span class="pre">--stage</span> <span class="pre">0</span></code>.
+Please set a <strong>absolute path</strong> for <code class="docutils literal notranslate"><span class="pre">$data</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">/home/username/asr-data/aishell/</span></code></p>
 </div>
 <div class="section" id="stage-0-prepare-training-data">
 <h3>Stage 0: Prepare Training data<a class="headerlink" href="#stage-0-prepare-training-data" title="Permalink to this headline"></a></h3>
